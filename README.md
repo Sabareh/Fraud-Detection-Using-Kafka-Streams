@@ -1,5 +1,4 @@
-
----
+------------------------------
 
 # Fraud Detection from IP Logs using Kafka Streams
 
@@ -18,7 +17,8 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
 - **Kafka Streams**: Core for stream processing.
 - **Apache Kafka**: Message broker for distributing IP log data.
-- **Java/Scala**: Programming language used for building Kafka Streams application.
+- **Java**: Programming language used for building Kafka Streams application.
+- **Maven**: Dependency management and build tool.
 - **Zookeeper**: Manages Kafka cluster and configuration.
 - **Docker (Optional)**: For containerized deployment of Kafka and Zookeeper.
 - **Prometheus & Grafana (Optional)**: For monitoring and visualizing Kafka metrics.
@@ -29,6 +29,7 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
 - Apache Kafka installed locally or available via a cluster (or Docker setup).
 - Java 8+ installed.
+- Maven installed.
 - Zookeeper installed (if running Kafka locally).
 
 ### Installation
@@ -42,8 +43,10 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
 2. **Install Dependencies**:
 
+   Navigate to the project directory and install Maven dependencies:
+
    ```bash
-   ./gradlew build
+   mvn clean install
    ```
 
 3. **Start Kafka and Zookeeper**:
@@ -67,8 +70,10 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
 5. **Run the Application**:
 
+   Use Maven to run the application:
+
    ```bash
-   ./gradlew run
+   mvn exec:java -Dexec.mainClass=com.yourpackage.FraudDetectionApp
    ```
 
 6. **Send IP Logs to Kafka**:
@@ -83,11 +88,12 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
 ### Customizing Fraud Detection Rules
 
-Modify the `CacheIPLookup.java` to adjust the detection logic. For example, you can change the rule that flags IPs with more than X failed logins within Y minutes or alerts on access from specific geo-locations.
+Modify the `CacheIPLookup.java` file to adjust the detection logic. For example, you can change the rule that flags IPs with more than X failed logins within Y minutes or alerts on access from specific geo-locations.
 
 ## Project Structure
 
 - **src/main/java**: Contains the Kafka Streams application and logic for fraud detection.
+- **pom.xml**: Maven project file containing dependencies and build configuration.
 - **docker-compose.yml**: Optional Docker configuration for running Kafka and Zookeeper locally.
 - **prometheus.yml**: (Optional) Configuration file for setting up Prometheus for monitoring.
 
@@ -109,7 +115,3 @@ Feel free to fork this repository and make pull requests. Any contributions, sug
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-You can adapt this template as needed depending on your project specifics, like including setup steps for Docker if you're using containerization.
