@@ -3,5 +3,5 @@ import java.io.Serializable;
 import java.util.HashSet;
 
 public class CacheIPLookup implements IIPScanner, Serializable {
-
+    private
 }
