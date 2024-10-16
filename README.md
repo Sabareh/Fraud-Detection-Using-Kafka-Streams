@@ -38,7 +38,7 @@ This project demonstrates how to use Apache Kafka Streams to detect fraudulent a
 
    ```bash
    git clone https://github.com/sabareh/fraud-detection-using-kafka-streams.git
-   cd fraud-detection-kafka
+   cd fraud-detection-using-kafka-streams
    ```
 
 2. **Install Dependencies**:
