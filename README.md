@@ -1,4 +1,3 @@
-Here's a basic structure for your README file for the Kafka Streams project on fraud detection from IP logs:
 
 ---
 
